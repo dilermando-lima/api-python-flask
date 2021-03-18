@@ -1,6 +1,8 @@
 {
-    "python.pythonPath": "/home/dilo/Desktop/Teste Script/my-env/bin/python3",
+    "python.pythonPath": "my-env/bin/python",
     "python.autoComplete.extraPaths": ["${workspaceFolder}/app_client"],
+    "python.linting.pylintPath":"my-env/bin/pylint",
+    "python.linting.pylintArgs": ["--rcfile","${workspaceFolder}/app_client/.pylintrc"],
     "python.analysis.extraPaths": [
         "${workspaceFolder}/app_client"
     ],
@@ -8,6 +10,8 @@
          "**/.git": true,
         "**/__init__.py":true,
         "**/__pycache__":true
-     }
+    },
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true
 
 }

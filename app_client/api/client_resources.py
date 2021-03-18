@@ -1,28 +1,27 @@
 from flask import request, Blueprint, jsonify
-from app_client.api.handle_excep import *
 from app_client.api.interceptor_resources import validate_resource
-from app_client.api.cliente_views import *
+from app_client.api import cliente_views 
 
 client_resources = Blueprint("client_resources",__name__)
 
 @client_resources.route("/client", methods = ['GET'])
 @validate_resource
-def list():
-    return jsonify(list_client())
+def list_client():
+    return jsonify(cliente_views.list_client())
 
-@client_resources.route("/client/<id>", methods = ['GET'])
+@client_resources.route("/client/<_id>", methods = ['GET'])
 @validate_resource
-def list_by_id(id):
-    return jsonify(list_client_by_id(id))
+def list_client_by_id(_id):
+    return jsonify(cliente_views.list_client_by_id(_id))
     
 
 @client_resources.route("/client", methods = ['POST'])
 @validate_resource
-def insert():
-    return jsonify(insert_client(request.get_json()))
+def insert_client():
+    return jsonify(cliente_views.insert_client(request.get_json()))
 
 
-@client_resources.route("/client/<id>", methods = ['PUT'])
+@client_resources.route("/client/<_id>", methods = ['PUT'])
 @validate_resource
-def update(id):
-    return jsonify(update_cliente(request.get_json(), id))
+def update_cliente(_id):
+    return jsonify(cliente_views.update_cliente(request.get_json(), _id))

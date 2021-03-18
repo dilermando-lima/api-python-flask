@@ -1,0 +1,15 @@
+[MESSAGES CONTROL]
+disable=missing-function-docstring,
+        missing-module-docstring,
+        trailing-whitespace,
+        trailing-newlines,
+        missing-final-newline,
+        missing-class-docstring
+
+[FORMAT]
+max-line-length=180
+        
+ignored-classes=SQLAlchemy,Registrant,scoped_session
+
+# used for invalid attr names
+good-names=id

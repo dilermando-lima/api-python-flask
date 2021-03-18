@@ -1,5 +1,4 @@
 from functools import wraps
-from flask import request
 
 def validate_resource(function):
     @wraps(function)
