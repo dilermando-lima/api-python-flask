@@ -1,0 +1,13 @@
+{
+    "python.pythonPath": "/home/dilo/Desktop/Teste Script/my-env/bin/python3",
+    "python.autoComplete.extraPaths": ["${workspaceFolder}/app_client"],
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/app_client"
+    ],
+     "files.exclude": {
+         "**/.git": true,
+        "**/__init__.py":true,
+        "**/__pycache__":true
+     }
+
+}
