@@ -7,7 +7,7 @@ disable=missing-function-docstring,
         missing-class-docstring
 
 [FORMAT]
-max-line-length=180
+max-line-length=200
         
 ignored-classes=SQLAlchemy,Registrant,scoped_session
 

@@ -19,7 +19,7 @@ def handle_http_exception(error):
 def valid_str_none_or_trim_empty(status, message, obj):
     if obj is None:
         abort(status,message)
-    elif str(obj).isspace():
+    elif  str(obj) == "" or str(obj).isspace():
         abort(status, message)
 
 
@@ -32,11 +32,11 @@ def valid_condiction_is_true(status, message, condition):
         abort(status,message)
 
 def valid_email_single_not_valid(status, message, email):
-    if not re.match("^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$",str(email)):
+    if email is not None and not re.match("^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$",str(email)):
         abort(status,message)
 
 def valid_email_mult_not_valid(status, message, email):
-    if not re.match("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?",str(email)):
+    if email is not None and not re.match("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?",str(email)):
         abort(status,message)
 
 def valid_linkhttp_not_valid(status, message, email):
