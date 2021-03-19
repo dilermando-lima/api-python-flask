@@ -24,4 +24,4 @@ def insert_client():
 @client_resources.route("/client/<_id>", methods = ['PUT'])
 @validate_resource
 def update_cliente(_id):
-    return jsonify(cliente_views.update_cliente(request.get_json(), _id))
+    return jsonify(cliente_views.update_client(request.get_json(), _id))

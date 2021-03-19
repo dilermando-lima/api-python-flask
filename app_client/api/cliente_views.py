@@ -37,7 +37,7 @@ def insert_client(body):
 
     return client
 
-def update_Cliente(body, _id):
+def update_client(body, _id):
 
     valid_none(400, "'id' is required", _id)
     valid_none(400, "'name' is required", body)

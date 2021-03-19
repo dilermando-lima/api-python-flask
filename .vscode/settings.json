@@ -10,7 +10,7 @@
     "python.testing.pytestPath": "${workspaceFolder}/app_client/tests",
     "python.testing.pytestEnabled": true,
     "python.testing.unittestEnabled": true,
-    "python.testing.pytestArgs": ["","--pdb"],
+    "python.testing.pytestArgs": ["-v","--pdb"],
     // hide some files
      "files.exclude": {
         "**/.git": true,
