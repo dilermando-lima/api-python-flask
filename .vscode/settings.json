@@ -1,22 +1,26 @@
 {
     // enviroment
-    "python.pythonPath": "my-env/bin/python",
+    //"python.pythonPath": "my-env/bin/python",
     // autocomplete and pylint
     "python.autoComplete.extraPaths": ["${workspaceFolder}/app_client"],
-    "python.linting.pylintEnabled": true,
-    "python.linting.pylintPath":"my-env/bin/pylint",
+    //"python.linting.pylintEnabled": true,
+    //"python.linting.pylintPath":"my-env/bin/pylint",
     "python.linting.pylintArgs": ["--rcfile","${workspaceFolder}/app_client/.pylintrc"],
     // pytest
-    "python.testing.pytestPath": "${workspaceFolder}/app_client/tests",
-    "python.testing.pytestEnabled": true,
-    "python.testing.unittestEnabled": true,
-    "python.testing.pytestArgs": ["-v","--pdb"],
+    //"python.testing.pytestPath": "${workspaceFolder}/app_client/tests",
+    //"python.testing.pytestEnabled": true,
+    //"python.testing.unittestEnabled": true,
+    //"python.testing.pytestArgs": ["-v","--pdb"],
     // hide some files
      "files.exclude": {
         "**/.git": true,
         "**/__init__.py":true,
         "**/__pycache__":true,
-        "**/.pytest_cache":true
-    }
+        "**/.pytest_cache":true,
+        "**/ci/":true
+    },
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/app_client"
+    ]
 
 }

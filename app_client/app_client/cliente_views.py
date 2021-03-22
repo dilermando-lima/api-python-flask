@@ -1,7 +1,7 @@
 from flask import abort
 from sqlalchemy.exc import SQLAlchemyError
-from app_client.api.models import Client, db
-from app_client.api.handle_excep import valid_none
+from app_client.app_client.models import Client, db
+from app_client.app_client.handle_excep import valid_none
 
 
 def list_client():

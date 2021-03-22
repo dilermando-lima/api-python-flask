@@ -19,7 +19,8 @@ services:
     build:
       context: ../../
       dockerfile: ./docker/local/Dockerfile
-    command: flask run --host 0.0.0.0
+    command: python -m debugpy --listen 0.0.0.0:5678 --wait-for-client -m flask run --host 0.0.0.0 --port 5000
+    # command: flask run --host 0.0.0.0
     volumes: 
       - ./../../app_client:/app_client
     environment: 
@@ -29,3 +30,4 @@ services:
       - mysql_app_client
     ports:
       - 5000:5000
+      - 5678:5678

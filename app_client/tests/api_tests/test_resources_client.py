@@ -17,7 +17,6 @@ def test_api_client_post(client):
     assert response.json["name"] == request_body["name"]
     assert response.json["email"] == request_body["email"]
 
-
 def test_api_client_get(client):
     headers = { "Content-Type": "application/json"}
     response = client.get("/client", headers=headers )

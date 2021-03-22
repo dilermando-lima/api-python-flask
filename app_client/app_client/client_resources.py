@@ -1,6 +1,6 @@
 from flask import request, Blueprint, jsonify
-from app_client.api.interceptor_resources import validate_resource
-from app_client.api import cliente_views 
+from app_client.app_client.interceptor_resources import validate_resource
+from app_client.app_client import cliente_views 
 
 client_resources = Blueprint("client_resources",__name__)
 
