@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  mysql_app_client:
+    container_name: mysql_app_client_local
+    image: mysql:8
+    command: --default-authentication-plugin=mysql_native_password 
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_DATABASE: "test_py"
+    ports:
+      - 3306:3306
+    volumes:
+      - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  flask_app_client:
+    container_name: flask_app_client_local
+    image: flask_app_client:local
+    build:
+      context: ../../
+      dockerfile: ./docker/local/Dockerfile
+    command: flask run --host 0.0.0.0
+    volumes: 
+      - ./../../app_client:/app_client
+    environment: 
+      FLASK_APP: "app.py"
+      FLASK_ENV: "development"
+    depends_on: 
+      - mysql_app_client
+    ports:
+      - 5000:5000
