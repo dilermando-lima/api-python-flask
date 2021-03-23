@@ -19,12 +19,11 @@ services:
     build:
       context: ../../
       dockerfile: ./docker/local/Dockerfile
-    command: python -m debugpy --listen 0.0.0.0:5678 --wait-for-client -m flask run --host 0.0.0.0 --port 5000
-    # command: flask run --host 0.0.0.0
     volumes: 
       - ./../../app_client:/app_client
+    #  - ./../../src-libs-docker:/src-libs-docker
     environment: 
-      FLASK_APP: "app.py"
+      FLASK_APP: "app_client/app.py"
       FLASK_ENV: "development"
     depends_on: 
       - mysql_app_client
