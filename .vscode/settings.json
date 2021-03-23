@@ -3,7 +3,6 @@
     "python.linting.pylintEnabled": true,
     "python.linting.pylintArgs": ["--rcfile","${workspaceFolder}/app_client/.pylintrc"],
     "python.analysis.extraPaths": ["${workspaceFolder}/app_client"],
-    // "python.pythonPath": "${workspaceFolder}/src-libs-docker",
     // hide some files
      "files.exclude": {
         "**/.git": true,

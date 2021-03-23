@@ -21,7 +21,6 @@ services:
       dockerfile: ./docker/local/Dockerfile
     volumes: 
       - ./../../app_client:/app_client
-    #  - ./../../src-libs-docker:/src-libs-docker
     environment: 
       FLASK_APP: "app_client/app.py"
       FLASK_ENV: "development"

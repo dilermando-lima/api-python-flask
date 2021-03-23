@@ -9,8 +9,5 @@ RUN pip install --upgrade pip && \
     pip install -r ./app_client/requirements/requirements_local.txt
 
 CMD python -m debugpy --listen 0.0.0.0:5678 --wait-for-client -m flask run --host 0.0.0.0 --port 5000
-    # rm -rf /src-libs-docker/* ; \
-    #cp -r /usr/local/lib/python3.9/site-packages /src-libs-docker ; \
-    # python -m debugpy --listen 0.0.0.0:5678 --wait-for-client -m flask run --host 0.0.0.0 --port 5000
 # CMD ["sleep","infinity"]
 EXPOSE 5000
